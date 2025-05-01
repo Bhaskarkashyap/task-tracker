@@ -35,7 +35,7 @@ npm install
 MONGODB_URI=<Your-mongo-atlas-url>
 JWT_SECRET=<your-secret-key>
 
-###3. Start the server
+### 4. Start the server
 npm run dev
 
 
