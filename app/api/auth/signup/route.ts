@@ -6,12 +6,12 @@ export async function POST(request: Request) {
   try {
     const { name, email, password, country } = await request.json()
 
-    // Validate input
+
     if (!name || !email || !password) {
       return NextResponse.json({ message: "Name, email, and password are required" }, { status: 400 })
     }
 
-    // Connect to MongoDB
+
     const client = await clientPromise
     const db = client.db()
     const usersCollection = db.collection("users")

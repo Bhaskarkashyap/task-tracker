@@ -29,13 +29,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: "Invalid credentials" }, { status: 401 })
     }
 
-    // Create token
+
     const token = signToken({
       userId: user._id.toString(),
       email: user.email,
     })
 
-    // Create a response object
+
     const response = NextResponse.json(
       {
         message: "Login successful",
@@ -48,14 +48,14 @@ export async function POST(request: Request) {
       { status: 200 },
     )
 
-    // Set cookie on the response object
+
     response.cookies.set({
       name: "auth_token",
       value: token,
       httpOnly: true,
       path: "/",
       secure: process.env.NODE_ENV === "production",
-      maxAge: 60 * 60 * 24 * 7, // 1 week
+      maxAge: 60 * 60 * 24 * 7,
       sameSite: "strict",
     })
 

@@ -3,14 +3,15 @@ import { cookies } from "next/headers"
 
 export async function POST() {
   try {
-    // Clear the auth cookie
-    cookies().set({
+    const cookieStore = await cookies()
+
+    cookieStore.set({
       name: "auth_token",
       value: "",
       httpOnly: true,
       path: "/",
       secure: process.env.NODE_ENV === "production",
-      maxAge: 0, // Expire immediately
+      maxAge: 0,
     })
 
     return NextResponse.json({ message: "Logged out successfully" }, { status: 200 })

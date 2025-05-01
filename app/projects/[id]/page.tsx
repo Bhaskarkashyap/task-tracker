@@ -2,16 +2,13 @@
 
 import React, { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { PlusCircle, ArrowLeft } from "lucide-react"
 import { toast } from "@/hooks/use-toast"
 import { TaskCard } from "@/components/task-card"
 import { CreateTaskDialog } from "@/components/create-task-dialog"
-import { UserNav } from "@/components/user-nav"
 import type { Project, Task } from "@/lib/types"
-import Navbar from "@/components/navbar"
 
 export default function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
   const router = useRouter()
@@ -184,7 +181,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-10">
-        {/* <Navbar user={user} /> */}
+      
       </header>
       <main className="flex-1 p-4 sm:p-6 md:p-8">
         <div className="mb-6">

@@ -27,7 +27,7 @@ export async function GET() {
 
     const user = await usersCollection.findOne(
       { _id: new ObjectId(decoded.userId) },
-      { projection: { password: 0 } }, // Exclude password
+      { projection: { password: 0 } },
     )
 
     if (!user) {

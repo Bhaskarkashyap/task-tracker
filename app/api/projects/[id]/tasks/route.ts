@@ -13,7 +13,7 @@ export async function GET(
   { params }: { params: Params }
 ) {
   try {
-    const cookieStore = await cookies(); // ✅ Await the cookies() promise
+    const cookieStore = await cookies();
     const token = cookieStore.get("auth_token")?.value;
 
     if (!token) {
@@ -70,7 +70,7 @@ export async function POST(
   { params }: { params: Params }
 ) {
   try {
-    const cookieStore = await cookies(); // ✅ Await the cookies() promise
+    const cookieStore = await cookies();
     const token = cookieStore.get("auth_token")?.value;
 
     if (!token) {

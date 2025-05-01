@@ -75,7 +75,7 @@ export default function DashboardPage() {
   
       const newProject = await response.json()
       
-      // ✅ Prepend the new project
+     
       setProjects([newProject, ...projects])
   
       toast({

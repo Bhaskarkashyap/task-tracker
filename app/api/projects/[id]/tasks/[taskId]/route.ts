@@ -4,7 +4,7 @@ import { ObjectId } from "mongodb"
 import clientPromise from "@/lib/mongodb"
 import { verifyToken } from "@/lib/jwt"
 
-// Get a specific task
+
 export async function GET(request: Request, { params }: { params: { id: string; taskId: string } }) {
   try {
     // Get token from cookies
@@ -88,22 +88,22 @@ export async function PATCH(request: Request, { params }: { params: { id: string
     if (title !== undefined) updateData.title = title
     if (description !== undefined) updateData.description = description
 
-    // Handle status changes and completedAt date
+
     if (status !== undefined) {
       updateData.status = status
 
-      // If status is changing to completed, set completedAt to now
+
       if (status === "completed") {
         updateData.completedAt = completedAt || new Date()
       }
 
-      // If status is changing from completed, remove completedAt
+
       if (status !== "completed") {
         updateData.completedAt = null
       }
     }
 
-    // If completedAt is explicitly provided, use it
+
     if (completedAt !== undefined) {
       updateData.completedAt = completedAt
     }
@@ -128,7 +128,7 @@ export async function PATCH(request: Request, { params }: { params: { id: string
       return NextResponse.json({ message: "Task not found" }, { status: 404 })
     }
 
-    // Convert ObjectId to string
+
     const updatedTask = {
       ...result,
       _id: result._id.toString(),
@@ -144,7 +144,7 @@ export async function PATCH(request: Request, { params }: { params: { id: string
 // Delete a task
 export async function DELETE(request: Request, { params }: { params: { id: string; taskId: string } }) {
   try {
-    // Get token from cookies
+
     const cookieStore = await cookies();
     const token = cookieStore.get("auth_token")?.value;
 
@@ -163,7 +163,7 @@ export async function DELETE(request: Request, { params }: { params: { id: strin
       return NextResponse.json({ message: "Invalid ID format" }, { status: 400 })
     }
 
-    // Connect to MongoDB
+
     const client = await clientPromise
     const db = client.db()
     const tasksCollection = db.collection("tasks")

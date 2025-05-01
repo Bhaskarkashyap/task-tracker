@@ -40,7 +40,7 @@ export default function LoginPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include", // 🔥 Important for receiving cookies
+        credentials: "include", 
         body: JSON.stringify(formData),
       })
   
@@ -54,10 +54,10 @@ export default function LoginPage() {
         description: "You have been logged in.",
       })
   
-      // ✅ Wait a moment to ensure cookies are stored
+     
       setTimeout(() => {
         router.push("/dashboard")
-        setIsLoading(false) // ✅ Reset loading state
+        setIsLoading(false) 
       }, 300)
   
     } catch (error) {

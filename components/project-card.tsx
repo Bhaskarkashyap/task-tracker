@@ -12,7 +12,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, onDelete }: ProjectCardProps) {
 
-  // Format date to a readable string
+
   const formattedDate = new Date(project.createdAt).toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",

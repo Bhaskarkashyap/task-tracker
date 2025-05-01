@@ -3,7 +3,7 @@ import { cookies } from "next/headers"
 import clientPromise from "@/lib/mongodb"
 import { verifyToken } from "@/lib/jwt"
 
-// Get all projects for the authenticated user
+
 export async function GET() {
   try {
     const cookieStore = await cookies()
@@ -39,7 +39,7 @@ export async function GET() {
   }
 }
 
-// Create a new project
+
 export async function POST(request: Request) {
   try {
     const cookieStore = await cookies()
