@@ -20,7 +20,7 @@ export function ProjectCard({ project, onDelete }: ProjectCardProps) {
   })
 
   return (
-    <Card className="overflow-hidden relative lg:h-60 h-72">
+    <Card className="overflow-hidden relative xl:h-60 h-72">
       <CardHeader className="pb-3">
         <CardTitle className="text-xl">{project.name}</CardTitle>
       
@@ -34,20 +34,20 @@ export function ProjectCard({ project, onDelete }: ProjectCardProps) {
           {project.description || "No description provided."}
         </p>
       </CardContent>
-      <CardFooter className=" absolute bottom-0 flex justify-between w-full lg:flex-row flex-col gap-y-3  ">
+      <CardFooter className=" absolute bottom-0 flex justify-between w-full xl:flex-row flex-col gap-y-3  ">
         
-        <div className="flex gap-2  justify-between lg:justify-normal  w-full  ">
+        <div className="flex gap-2  justify-between xl:justify-normal  w-full  ">
        <Link href={`/projects/${project._id}`} className="">
           <Button className="" variant="outline">
             View
             <ArrowRight className="ml-1" />
           </Button>
         </Link>
-          <div className="justify-end lg:justify-normal ">
+          <div className="justify-end xl:justify-normal ">
           <AnimatedTooltipPreview tip={true} />
           </div>
        </div>
-       <div className="w-full lg:w-auto">
+       <div className="w-full xl:w-auto">
   <Button variant="destructive" onClick={() => onDelete(project._id)} className="w-full flex items-center justify-center">
     <Trash  className="text-white" />
   </Button>
