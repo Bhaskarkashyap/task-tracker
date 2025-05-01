@@ -28,7 +28,7 @@ const routes = [
   {
     label: "Inbox",
     icon: MessageSquare,
-    href: "/Inbox",
+    href: "",
     color: "text-gray",
   },
   {
@@ -36,12 +36,12 @@ const routes = [
     icon: UsersRound,
     color: "text-gray",
     bgColor: "bg-gray",
-    href: "/teams",
+    href: "",
   },
   {
     label: "Settings",
     icon: Settings,
-    href: "/setting",
+    href: "",
   },
 ];
 
@@ -59,7 +59,7 @@ const Sidebar = () => {
           {routes.map((route) => (
             <Link
               href={route.href}
-              key={route.href}
+              key={route.label}
               className={cn(
                 "text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:scale-105",
                 pathname === route.href
