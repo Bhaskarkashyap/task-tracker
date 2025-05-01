@@ -136,6 +136,9 @@ export default function SignupPage() {
                 Log in
               </Link>
             </div>
+            <Link href="/" className="underline underline-offset-4 hover:text-primary">
+               Go Back Home
+              </Link>
           </CardFooter>
         </form>
       </Card>
