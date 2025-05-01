@@ -139,7 +139,7 @@ export function TaskCard({ task, onUpdate, onDelete }: TaskCardProps) {
             {task.description || "No description provided."}
           </p>
         </CardContent>
-        <CardFooter className="flex justify-between pt-2">
+        <CardFooter className="flex justify-between pt-2 xl:flex-row flex-col gap-y-3 ">
           <div className="flex gap-2">
             <Button
               variant="outline"
