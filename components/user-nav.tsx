@@ -48,8 +48,8 @@ export function UserNav({ user }: UserNavProps) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-          <Avatar className="h-10 w-10">
-            <AvatarFallback className="bg-purple-700 text-white">{getInitials(user.name)}</AvatarFallback>
+          <Avatar className="h-10 w-10 ">
+            <AvatarFallback className=" text-white bg-gradient-to-r from-orange-400 to-yellow-400 text-xl" >{getInitials(user.name)}</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>

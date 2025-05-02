@@ -6,6 +6,7 @@ import "./globals.css"
 
 import { ThemeProvider } from "@/components/theme-provider"
 import ClientOnly from "@/components/ClientOnly"
+import { ToastProvider } from "@/components/ui/toast"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -24,7 +25,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <ClientOnly>
           <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem disableTransitionOnChange>
-            {children}
+           <ToastProvider>
+           {children}
+           </ToastProvider>
           </ThemeProvider>
         </ClientOnly>
       </body>
