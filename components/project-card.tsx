@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { CalendarDays, ArrowRight, DeleteIcon, Trash } from "lucide-react"
+import { CalendarDays, ArrowRight, DeleteIcon, Trash, Trash2 } from "lucide-react"
 import Link from "next/link"
 import type { Project } from "@/lib/types"
 import { AnimatedTooltipPreview } from "./AnimatedTooltip"
@@ -48,9 +48,16 @@ export function ProjectCard({ project, onDelete }: ProjectCardProps) {
           </div>
        </div>
        <div className="w-full xl:w-auto">
-  <Button variant="destructive" onClick={() => onDelete(project._id)} className="w-full flex items-center justify-center">
-    <Trash  className="text-white" />
-  </Button>
+
+  <Button
+              variant="outline"
+              size="sm"
+              onClick={() => onDelete(project._id)}
+              className="hover:bg-red-500 hover:text-white"
+            >
+              <Trash2 className="h-3.5 w-3.5 mr-1" />
+           
+            </Button>
 </div>
 
       

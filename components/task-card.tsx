@@ -31,6 +31,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import type { Task } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 interface TaskCardProps {
   task: Task;
@@ -125,7 +126,7 @@ export function TaskCard({ task, onUpdate, onDelete }: TaskCardProps) {
         <CardHeader className="pb-2">
           <div className="flex justify-between items-start">
             <CardTitle className="text-lg">{task.title}</CardTitle>
-            <Badge className={getStatusColor(task.status)}>
+            <Badge className={cn(getStatusColor(task.status), ' text-nowrap ')}>
               {getStatusLabel(task.status)}
             </Badge>
           </div>
