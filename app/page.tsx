@@ -8,7 +8,7 @@ export default function Home() {
     <div className="min-h-screen ">
       <header className="px-4 lg:px-6 h-14 flex items-center border-b">
         <Link className="flex items-center justify-center" href="/">
-          <span className="font-bold text-xl">Task Tracker</span>
+          <span className="font-bold text-xl">Taskzy</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link
@@ -31,16 +31,11 @@ export default function Home() {
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
               <h1 className="text-3xl font-bold  sm:text-4xl md:text-5xl lg:text-8xl max-w-5xl">
-            <span className="">
-            Manage Your Tasks{" "}
+            <span className="leading-tight">
+            Manage Your Tasks  { " " }
            <span className="bg-gradient-to-r from-orange-400 to-yellow-400 text-transparent bg-clip-text">
-           Efficiently
-         </span>{" "}
-          With{" "}
-            <span className="inline-flex">
-           <AnimatedTooltipPreview tip={false} />
-      <span className="ml-1">Teams</span>
-    </span>
+             Efficiently
+         </span>
   </span>
 </h1>
 
