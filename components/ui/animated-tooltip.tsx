@@ -8,6 +8,7 @@ import {
   useMotionValue,
   useSpring,
 } from "motion/react";
+import { StaticImageData } from "next/image";
 
 export const AnimatedTooltip = ({
   items,
@@ -17,7 +18,7 @@ export const AnimatedTooltip = ({
     id: number;
     name: string;
     designation: string;
-    image: string;
+    image: StaticImageData;
   }[];
   tip : boolean
 }) => {
@@ -75,7 +76,7 @@ export const AnimatedTooltip = ({
              <div className="relative z-30 text-base font-bold text-white">
                   {item.name}
                 </div>
-            <div className="text-xs text-white">{item.designation}</div>
+            {/* <div className="text-xs text-white">{item.designation}</div> */}
               </motion.div>
             )}
           </AnimatePresence>}
@@ -83,7 +84,7 @@ export const AnimatedTooltip = ({
             onMouseMove={handleMouseMove}
             height={100}
             width={100}
-            src={item.image}
+            src={item.image.src}
             alt={item.name}
             className="relative !m-0 h-10 w-10 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105"
           />

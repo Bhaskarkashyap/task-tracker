@@ -53,7 +53,7 @@ export function ProjectCard({ project, onDelete }: ProjectCardProps) {
               variant="outline"
               size="sm"
               onClick={() => onDelete(project._id)}
-              className="hover:bg-red-500 hover:text-white"
+              className="hover:bg-red-500 hover:text-white w-full"
             >
               <Trash2 className="h-3.5 w-3.5 mr-1" />
            
